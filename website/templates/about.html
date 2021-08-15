@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block main %}
+<h1>自己紹介</h1>
+<img src="{% static 'chainsawman-bike.jpg' %}" width="500" height="500">
+<h2>実績</h2>
+<p>{% now "Y年m月d日 H時i分" %}現在までに{{ numservices | intcomma }}個のサービスを作りました！</p>
+<h2>スキル</h2>
+<ul>
+    {% for skill in skills %}
+    <li>{{ skill }}</li>
+    {% empty %}
+    <li>スキルがありません</li>
+    {% endfor %}
+</ul>
+{% endblock main %}
