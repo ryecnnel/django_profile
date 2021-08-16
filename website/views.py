@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView, DetailView
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -31,3 +31,15 @@ class AboutView(TemplateView):
 
 class ContactView(TemplateView):
     template_name = "contact.html"
+
+# ListViewは一覧を簡単に作るためのView
+class Index(ListView):
+    # 一覧するモデルを指定 -> `object_list`で取得可能
+    #model = Post
+    pass
+
+# DetailViewは詳細を簡単に作るためのView
+class Detail(DetailView):
+    # 詳細表示するモデルを指定 -> `object`で取得可能
+    #model = Post
+    pass
