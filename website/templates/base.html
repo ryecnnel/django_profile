@@ -1,16 +1,32 @@
 {% load static %}
+{% load sass_tags %}
 <!doctype HTML>
 <html>
     <head>
-       <link rel="stylesheet" href="{% static 'main.css' %}"> 
+    <link rel="stylesheet" href="{% sass_src 'website/main.scss' %}">
+    <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/lgc1tgs.css">
     </head>
+    </head>
+    {% include "_header.html" %}
     <body>
-        {% include "_navbar.html" %}
+    <div class="top_wrapper">
+        <div class="page_top">
+            {% block title %}{% endblock %}
 
+            {% if username == "yuyaarai" %}
+            <h1 class="welcome_message">己ようこそ</h1>
+            {% elif username %}
+            <h1 class="welcome_message">{{ username }}さん、ようこそ！！</h1>
+            {% else %}
+            <h1 class="welcome_message">匿名希望さん、ようこそ</h1>
+            {% endif %}
+        </div>
         {% block main %}
         コンテンツがありません
         {% endblock  %}
-
-        {% include "_footer.html" %}
+        <i class="fab fa-accusoft"></i>
     </body>
+    {% include "_footer.html" %}
 </html>

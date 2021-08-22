@@ -2,7 +2,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 
 # Create your views here.
 class IndexView(TemplateView):
-    template_name = "index.html"
+    template_name = "home.html"
 
     def get_context_data(self):
         ctxt = super().get_context_data()
@@ -32,10 +32,15 @@ class AboutView(TemplateView):
 class ContactView(TemplateView):
     template_name = "contact.html"
 
+    def get_context_data(self):
+        ctxt = super().get_context_data()
+        return ctxt
+
+
 # ListViewは一覧を簡単に作るためのView
 class Index(ListView):
     # 一覧するモデルを指定 -> `object_list`で取得可能
-    #model = Post
+    # model = Post
     pass
 
 # DetailViewは詳細を簡単に作るためのView

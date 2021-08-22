@@ -1,0 +1,60 @@
+$header-height: 180px;
+
+header {
+    width: 100%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $main-color;
+    color: $head-color;
+    font-size: 14px;
+    text-align: center;
+
+    .header_title{
+        width: 280px;
+        height: $header-height;
+        margin-left: 20px;
+        img {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+
+    .header_nav_bar {
+        display: flex;
+        justify-content: flex-end; 
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            width: 300px;
+            height: $header-height;
+            padding-right: 10px;
+            margin: 0 auto;
+            list-style:none;
+        }
+
+        & li{
+            padding:10px;
+            font-size: 20px;
+            @include btn;
+        }
+
+        & .home :before {
+            @include icon("\e065", $main-color, 100%);
+        }
+        & .about :before {
+            @include icon("\f2bb", $main-color, 100%);
+        }
+        & .contact :before {
+            @include icon("\f1fa", $main-color, 100%);
+        }
+
+    }
+
+}

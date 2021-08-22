@@ -2,17 +2,29 @@
 {% load static %}
 {% load humanize %}
 
+{% block title %}<h1 class="page_title about">About</h1>{% endblock %}
 {% block main %}
-<h1>自己紹介</h1>
-<img src="{% static 'chainsawman-bike.jpg' %}" width="500" height="500">
-<h2>実績</h2>
-<p>{% now "Y年m月d日 H時i分" %}現在までに{{ numservices | intcomma }}個のサービスを作りました！</p>
-<h2>スキル</h2>
-<ul>
-    {% for skill in skills %}
-    <li>{{ skill }}</li>
-    {% empty %}
-    <li>スキルがありません</li>
-    {% endfor %}
-</ul>
-{% endblock main %}
+<div class="top_wrapper">
+    <div class="container">
+        <div class="top_message">
+            <h1>About ME!!</h1>
+            <h2>実績</h2>
+            <p>{% now "Y年m月d日 H時i分" %}現在までに{{ numservices | intcomma }}個のサービスを作りました！</p>
+            <h2>スキル</h2>
+            <ul>
+                {% for skill in skills %}
+                <li>{{ skill }}</li>
+                {% empty %}
+                <li>スキルがありません</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="top_image">
+            <img src="{% static 'images/chainsawman-bike.jpg' %}" height="350px">
+        </div>
+    </div>
+    {% include "_contents.html" %}
+    {% include "_profilecard.html" %}
+    
+</div>
+{% endblock %}

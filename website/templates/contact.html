@@ -1,13 +1,25 @@
-<!doctype HTML>
-<html>
-    <head>
-        
-    </head>
-    <body>
-        {% include "_navbar.html" %}
-        <h1>コンタクト</h1>
-        <h1>Hello, django!</h1>
-        <p>welcome!</p>
-        <p>お腹すいた</p>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<h1 class="page_title contact">Contact</h1>{% endblock %}
+
+{% block main %}
+<div class="top_wrapper">
+    <div class="container">
+        <div class="top_message">
+            <h1>Please Contact Me!!!</h1>
+            <p>質問・ご依頼等あればお気軽にご連絡ください<br>お仕事お待ちしております</p>
+            <h2>各種SNS</h2>
+            <p>Twitter</p>
+            <p>Instagram</p>
+            <p>Facebook</p>
+        </div>
+        <div class="top_image">
+            <img src="{% static 'images/chainsaw-man-red.jpg' %}" height="350px">
+        </div>
+    </div>
+    {% include "_contents.html" %}
+    {% include "_profilecard.html" %}
+    
+</div>
+{% endblock %}

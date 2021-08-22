@@ -5,3 +5,4 @@ dj-database-url
 python-dotenv
 psycopg2-binary
 mysqlclient
+fontawesome-free==5.15.4
