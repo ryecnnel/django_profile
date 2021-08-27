@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<h1 class="page_title home">{{ object.title }}</h1>{% endblock %}
+
+{% block main %}
+<div class="post_wrapper">
+    <div class="container">
+        <p>{{ object.published|date }}</p>
+        <p>{{ object.category.name }}</p>
+        {% for tag in object.tags.all %}
+        {{ tag.name }}
+        {% endfor %}
+        <hr>
+        {{ object.body|safe }}
+    </div>
+    {% include "_contents.html" %}
+    {% include "_profilecard.html" %}
+    
+</div>
+{% endblock %}

@@ -2,29 +2,46 @@
 {% load static %}
 {% load humanize %}
 
-{% block title %}<h1 class="page_title about">About</h1>{% endblock %}
 {% block main %}
-<div class="top_wrapper">
-    <div class="container">
-        <div class="top_message">
-            <h1>About ME!!</h1>
-            <h2>実績</h2>
-            <p>{% now "Y年m月d日 H時i分" %}現在までに{{ numservices | intcomma }}個のサービスを作りました！</p>
-            <h2>スキル</h2>
-            <ul>
-                {% for skill in skills %}
-                <li>{{ skill }}</li>
-                {% empty %}
-                <li>スキルがありません</li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="top_image">
-            <img src="{% static 'images/chainsawman-bike.jpg' %}" height="350px">
-        </div>
+<div class="bg__blue"></div>
+<section>
+<div class="box__container">
+    <div class="box__title"><h1 class="about">About</h1></div>
+    <div class="home__container">
+    <div class="top_message">
+        <h1>About ME!!</h1>
+        <h2>所属</h2>
+        <ul>
+            {% for things in affiliation %}
+            <li>{{ things }}</li>
+            {% empty %}
+            <li>所属がありません</li>
+            {% endfor %}
+        </ul>
+        <h2>実績</h2>
+        <p>{% now "Y年m月d日 H時i分" %}現在までに{{ numservices | intcomma }}個のサービスを作りました！</p>
+        <h2>スキル</h2>
+        <ul>
+            {% for skill in skills %}
+            <li>{{ skill }}</li>
+            {% empty %}
+            <li>スキルがありません</li>
+            {% endfor %}
+        </ul>
     </div>
-    {% include "_contents.html" %}
-    {% include "_profilecard.html" %}
-    
+    <div class="top_image">
+        <img src="{% static 'images/chainsawman-bike.jpg' %}" width="500px" height="500px">
+    </div>
+    </div>
 </div>
+</section>
+
+<section>
+{% include "_contents.html" %}
+</section>
+
+<section>
+{% include "_profilecard.html" %}
+</section>
+
 {% endblock %}

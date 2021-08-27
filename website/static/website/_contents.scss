@@ -1,68 +1,41 @@
-// Color Variables
-$indigo: #5C6BC0; 
-$blue: #29B6F6;
-$black: #717171;
-
-$body-font-family: "Lato";
-$header-font-family: "Montserrat";
-
-// Basic Styles for Demo
-*,*:after,*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing:  border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 100%;
-}
-
-body {
-  font-size: 1em;
-  font-family: $body-font-family;
-  font-weight: 400;
-  line-height: 1.5;
-
-  word-wrap: break-word;
-    -webkit-hyphens: auto;
-       -moz-hyphens: auto;
-            hyphens: auto;  
-}
-
-img {
-  height: auto;
-  max-width: 100%;
-}
-
-a {
-  color: $blue;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
+// Basics demo styles
+.box__container {
+  max-width: 1000px;
+  margin: 8em auto;
+  padding-bottom: 2em;
+  overflow: hidden;
+  color: black;
+  background-color: rgba($main-color, 0.8);
+  border-radius: 8px;
+  .home__container {
+    @include one_container(white, 0px)
+  }
+  .contact__container {
+    @include one_container(white, 0px)
   }
 }
 
-// Basics demo styles
-.site__wrapper {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-}
-
-.site__info {
+.box__title {
   clear: both;
   display: block;
   font-variant: small-caps;
   letter-spacing: 2px;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   text-align: center;
+  font-size: 24px;
+}
+.home :before {
+  @include icon("\e065", $head-color, 80%);
+}
+.about :before {
+    @include icon("\f2bb", $head-color, 80%);
+}
+.blog :before {
+    @include icon("\f781", $head-color, 80%);
+}
+.contact :before {
+    @include icon("\f1fa", $head-color, 80%);
 }
 
 // Basic Grid for Demo;
@@ -80,8 +53,7 @@ a {
 }
 
 // Card Article
-.card {
-  
+.card { 
 }
 
 .card__image {
@@ -171,7 +143,7 @@ a {
   &.card__meta--last {
     margin-bottom: 0;
   }
-   
+
   li {
     color: #f8f8f8;
     display: inline;
@@ -195,4 +167,20 @@ a {
       color: #f8f8f8;
     }
   }
+}
+
+.bg__gray{
+  @include bg("gray", 1);
+}
+
+.bg__yellow{
+  @include bg("yellow", 1);
+}
+
+.bg__blue{
+  @include bg("blue", 0.8);
+}
+
+.bg__red{
+  @include bg("red", 1);
 }

@@ -1,23 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}<h1 class="page_title home">Home</h1>{% endblock %}
-
 {% block main %}
-<div class="top_wrapper">
-    <div class="container">
-        <div class="top_message">
-            <h1>Welcome to my site!!</h1>
-            <h2>暇すぎて作成したポートフォリオです。<br>ゆっくり見ていってください。</h2>
-            <p>この記事はPythonとDjango, Sassの練習のために作成しました。<br>
-            管理人に質問、依頼等があればご連絡頂きたいです〜</p>
-        </div>
-        <div class="top_image">
-            <img src="{% static 'images/karimen.jpg' %}" height="350px">
-        </div>
+<div class="bg__gray"></div>
+<section>
+<div class="box__container">
+  <div class="box__title"><h1 class="home">Home</h1></div>
+  <div class="home__container grid">
+    <div class="top_message">
+      <h1>Welcome to my site!!</h1>
+      <h2>暇すぎて作成したポートフォリオです。<br>ゆっくり見ていってください。</h2>
+      <p>この記事はPythonとDjango, Sassの練習のために作成しました。<br>
+          管理人に質問、依頼等があればご連絡頂きたいです〜</p>
     </div>
-    {% include "_contents.html" %}
-    {% include "_profilecard.html" %}
-    
+    <div class="top_image">
+      <img src="{% static 'images/karimen.jpg' %}">
+    </div>
+  </div>
 </div>
+</section>
+
+<section>
+{% include "_contents.html" %}
+</section>
+
+<section>
+{% include "_profilecard.html" %}
+</section>
+
 {% endblock %}

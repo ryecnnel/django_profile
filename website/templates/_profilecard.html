@@ -1,33 +1,33 @@
-<div class="site__info">
-    <h1>Site manager</h1>
-</div>
-<div id="curve" class="profilecard">
-    <div class="cardfooter">
-        <div class="connections">
-            <div class="connection facebook"><div class="icon"><a href="https://www.facebook.com/profile.php?id=100027121957705"></a></div></div>
-            <div class="connection twitter"><div class="icon"></div></div>
-            <div class="connection instagram"><div class="icon"></div></div>
-        </div>
-        <svg id="curve">
-            <path id="p" d="M0,200 Q80,100 400,200 V150 H0 V50" transform="translate(0 300)" />
-            <rect id="dummyRect" x="0" y="0" height="450" width="400" fill="transparent" />
-            <!-- slide up-->
-            <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,100 400,50 V150 H0 V50" fill="freeze" begin="dummyRect.mouseover" end="dummyRect.mouseout" dur="0.1s" id="bounce1" />
-            <!-- slide up and curve in -->
-            <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,0 400,50 V150 H0 V50" fill="freeze" begin="bounce1.end" end="dummyRect.mouseout" dur="0.15s" id="bounce2" />
-            <!-- slide down and curve in -->
-            <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,80 400,50 V150 H0 V50" fill="freeze" begin="bounce2.end" end="dummyRect.mouseout" dur="0.15s" id="bounce3" />
-            <!-- slide down and curve out -->
-            <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,45 400,50 V150 H0 V50" fill="freeze" begin="bounce3.end" end="dummyRect.mouseout" dur="0.1s" id="bounce4" />
-            <!-- curve in -->
-            <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce4.end" end="dummyRect.mouseout" dur="0.05s" id="bounce5" />
+<div class="box__container">
+    <div class="box__title"><h1>Site manager</h1></div>
+    <div id="curve" class="profilecard">
+        <div class="cardfooter">
+            <div class="connections">
+                <div class="connection facebook"><div class="icon"><a href="https://www.facebook.com/profile.php?id=100027121957705"></a></div></div>
+                <div class="connection twitter"><div class="icon"></div></div>
+                <div class="connection instagram"><div class="icon"></div></div>
+            </div>
+            <svg id="curve">
+                <path id="p" d="M0,200 Q80,100 400,200 V150 H0 V50" transform="translate(0 300)" />
+                <rect id="dummyRect" x="0" y="0" height="450" width="400" fill="transparent" />
+                <!-- slide up-->
+                <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,100 400,50 V150 H0 V50" fill="freeze" begin="dummyRect.mouseover" end="dummyRect.mouseout" dur="0.1s" id="bounce1" />
+                <!-- slide up and curve in -->
+                <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,0 400,50 V150 H0 V50" fill="freeze" begin="bounce1.end" end="dummyRect.mouseout" dur="0.15s" id="bounce2" />
+                <!-- slide down and curve in -->
+                <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,80 400,50 V150 H0 V50" fill="freeze" begin="bounce2.end" end="dummyRect.mouseout" dur="0.15s" id="bounce3" />
+                <!-- slide down and curve out -->
+                <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,45 400,50 V150 H0 V50" fill="freeze" begin="bounce3.end" end="dummyRect.mouseout" dur="0.1s" id="bounce4" />
+                <!-- curve in -->
+                <animate xlink:href="#p" attributeName="d" to="M0,50 Q80,50 400,50 V150 H0 V50" fill="freeze" begin="bounce4.end" end="dummyRect.mouseout" dur="0.05s" id="bounce5" />
 
-            <animate xlink:href="#p" attributeName="d" to="M0,200 Q80,100 400,200 V150 H0 V50" fill="freeze" begin="dummyRect.mouseout" dur="0.15s" id="bounceOut" />
-        </svg>
-        <div class="info">
-            <div class="name">Yuya Arai</div>
-            <div class="job">Site manager, Osaka Univ. Master 1, 21th Koiya Committee</div>
+                <animate xlink:href="#p" attributeName="d" to="M0,200 Q80,100 400,200 V150 H0 V50" fill="freeze" begin="dummyRect.mouseout" dur="0.15s" id="bounceOut" />
+            </svg>
+            <div class="info">
+                <div class="name">Yuya Arai</div>
+                <div class="job">Site manager, Osaka Univ. Master 1, 21th Koiya Committee</div>
+            </div>
         </div>
+        <div class="card-blur"></div>
     </div>
-    <div class="card-blur"></div>
 </div>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -7,6 +8,10 @@ class Category(models.Model):
         blank=False,
         null=False,
         unique=True)
+
+    timestamp = models.DateTimeField(
+        null=True, 
+        auto_now_add=True)
     
     def __str__(self):
         return self.name
@@ -18,6 +23,10 @@ class Tag(models.Model):
         blank=False,
         null=False,
         unique=True)
+
+    timestamp = models.DateTimeField(
+        null = True, 
+        auto_now_add=True)
     
     def __str__(self):
         return self.name
@@ -52,6 +61,16 @@ class Post(models.Model):
     tags = models.ManyToManyField(
         Tag,
         blank=True)
+    
+    description = models.TextField(blank=True)
+    published = models.DateTimeField(blank=True, null=True)
+    is_public = models.BooleanField(default=False)
+
+
+    def save(self, *args, **kwargs):
+        if self.is_public and not self.published:
+            self.published = timezone.now()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="bg__yellow"></div>
+<section>
+<div class="box__container">
+<div class="box__title"><h1 class="home">Post List</h1></div>
+    <div class="contact__container">
+    <div class="top_message">
+        <h1>Welcome to my site!!</h1>
+        <ul>
+            {% for post in object_list %}
+            {% if user.is_authenticated or post.is_public %}
+            <li>{% if not post.is_public %}[下書き] {% endif %}<a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></li>
+            {% endif %}
+            {% empty %}
+            <li>まだ投稿はありません。</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="top_image">
+        <img src="{% static 'images/kimetsu.jpg' %}" height="200px">
+    </div>
+</div>
+</div>
+</section>
+
+<section>
+{% include "_contents.html" %}
+</section>
+
+<section>
+{% include "_profilecard.html" %}
+</section>
+
+{% endblock %}

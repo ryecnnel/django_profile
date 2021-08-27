@@ -1,0 +1,60 @@
+@mixin one_container($bgcolor, $pad_b) {
+        width: 100%;
+        float: none;
+        //display: inline-flex;
+        //justify-content: space-between;
+        //display: inline-block;
+        background-color: $bgcolor;
+        opacity: .9;
+        padding-bottom: $pad_b;
+        
+        .top_message {
+            width: 100%;
+            float:none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 30px;
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                margin-top: 12px;
+            }
+
+            p {
+                margin-top:8px;
+                color: $p-color;
+            }
+
+            ul {
+                margin-top: 20px;
+                list-style:none;
+            }
+            @media screen and (min-width: 40.063em) {
+                float: left;
+                width: 50%;
+                align-items: flex-start;
+                padding-top: 16px;
+                padding-left: 40px;
+                padding-right: 10px;
+                text-align: left;
+            }
+        }
+        
+        .top_image{
+            width: 100%;
+            float:none;
+            
+            @media screen and (min-width: 40.063em) {
+                float: left;
+                width: 50%;
+                padding-right: 40px;
+            }
+        }
+
+}

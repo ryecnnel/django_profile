@@ -2,6 +2,7 @@ from django.contrib import admin
 from . import models
 
 # Register your models here.
+"""
 @admin.register(models.Category)
 class CategoryAdmin(admin.ModelAdmin):
     pass
@@ -15,3 +16,9 @@ class TagAdmin(admin.ModelAdmin):
 @admin.register(models.Post)
 class PostAdmin(admin.ModelAdmin):
     pass
+"""
+from .models import Category, Tag, Post
+
+admin.site.register(Category)
+admin.site.register(Tag)
+admin.site.register(Post)
