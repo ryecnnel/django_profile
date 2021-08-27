@@ -6,8 +6,4 @@ python-dotenv
 psycopg2-binary
 mysqlclient
 fontawesome-free==5.15.4
-<<<<<<< HEAD
 django-sass-processor
-=======
-django-sass-processor
->>>>>>> e5ef23d68c3dcb8009b77a4a255b465aa2d5d711
